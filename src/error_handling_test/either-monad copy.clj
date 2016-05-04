@@ -21,15 +21,19 @@
       (either/right zipCode)
       (either/left "invalid zip code")))
 
-(let [contact {:name "batman" :email "batman99@gmail.com" :zipCode "12345"}]
-  (println
+(let [contact {:name "batman"
+               :email "batman99@gmail.com"
+               :zipCode "12345"}]
+  (pr-str
     (m/mlet [ valueSet (value-set (:name contact))
               email (valid-email (:email contact))
               zip (valid-zip-code (:zipCode contact))]
             contact)))
 
-(let [contact {:name nil :email "batman99@gmail.com" :zipCode "12345678"}]
-  (println
+(let [contact {:name nil
+               :email "batman99@gmail.com"
+               :zipCode "12345678"}]
+  (pr-str
     (m/mlet [ valueSet (value-set (:name contact))
               email (valid-email (:email contact))
               zip (valid-zip-code (:zipCode contact))]

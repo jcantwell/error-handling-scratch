@@ -30,7 +30,7 @@
 
 
 (defn am-I-lucky? [n]
-    ;;outer function chooses what restart to call based on the error
+;;outer function chooses what restart to call based on the error
    (binding [*unlucky-number-error*
             (fn [msg info]
               (*try-again* (rand-int 10)))]
@@ -44,7 +44,8 @@
   (catch RuntimeException e
     "Unlucky number in the sequence"))
 
-;;Using restarts we can handle the error appropriately at the point it occurred
+;;Using restarts we can handle the error appropriately at
+;;the point it occurred
 (defn lucky-numbers? []
   (binding [*unlucky-number-error*
             (fn [msg info]

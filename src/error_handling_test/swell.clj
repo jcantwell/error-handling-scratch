@@ -36,7 +36,8 @@
        (if (check-for-lucky-number n) "YES")))
 
 
-;;try with an unlucky number - instead of error being raised the check-for-lucky-number function is recalled with different values until it finds a lucky number
+;;try with an unlucky number - instead of error being raised the check-for-lucky-number
+;;function is recalled with different values until it finds a lucky number
 (lucky-number? 16)
 
 ;;Without binding a restart all we just know something went wrong
